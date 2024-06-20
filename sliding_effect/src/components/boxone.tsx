@@ -1,23 +1,18 @@
 import { forwardRef } from "react";
 
-const BoxOne = forwardRef(
-  ({
-    className,
-    color,
-    children,
-    ref,
-  }: {
+const BoxOne = forwardRef<
+  HTMLDivElement,
+  {
     className?: string;
     children: React.ReactElement;
     color: string;
-    ref: React.RefObject<HTMLDivElement>;
-  }) => {
-    return (
-      <div ref={ref} className={className} style={{ backgroundColor: color }}>
-        {children}
-      </div>
-    );
   }
-);
-
+>(({ className, color, children }) => {
+  return (
+    <div ref={ref} className={className} style={{ backgroundColor: color }}>
+      {children}
+    </div>
+  );
+});
+//some change
 export default BoxOne;
